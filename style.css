@@ -1,0 +1,538 @@
+/* الصفحه كلها*/
+body {
+    font-family: monospace;
+    text-transform: capitalize;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #4a4a8a, #111827); /* خليت الدرجة الثالثة غامقة عشان الزجاج ينور */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/*nav*//* ========================================== */
+/* 🌐 تنسيق الناف بار الزجاجي المستقبلي 🌐 */
+/* ========================================== */
+
+/* الهيدر بالكامل اللي شايل الاسم والروابط */
+.main-header {
+    position: sticky; /* بيفضل ثابت فوق وأنت بتنزل بالصفحة */
+    top: 0;
+    z-index: 1000; /* عشان يفضل فوق أي عنصر تاني في الموقع */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.4); /* خلفية داكنة شفافة جداً */
+    backdrop-filter: blur(12px); /* تأثير ضبابي زجاجي */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* خط سفلي ناعم */
+}
+
+/* تنسيق اسمك (اللوجو) */
+.logo-name {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 0 0 15px 0;
+    font-family: sans-serif;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* شريط الروابط (الكبسولة الزجاجية السوداء) */
+.navbar {
+    display: inline-flex;
+    background: rgba(15, 23, 42, 0.8); /* الكبسولة السوداء اللي في صورتك */
+    padding: 10px 30px;
+    border-radius: 40px; /* حواف دائرية كبسولة */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 25px; /* مسافة متناسقة بين اللينكات */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق اللينكات جوه الناف بار */
+.nav-link {
+    color: #94a3b8; /* لون رمادي هادي في البداية */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* 🎨 تأثير الـ Hover النيون الشيك للينكات */
+.nav-link:hover {
+    color: #7dd3fc; /* بيقلب أزرق سماوي نيون */
+    text-shadow: 0 0 10px rgba(125, 211, 252, 0.6); /* توهج نيون للخط */
+    transform: translateY(-1px);
+}
+
+/* خط نيون صغير بيفتح تحت اللينك لما تقف عليه */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #7dd3fc;
+    box-shadow: 0 0 8px #7dd3fc;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%; /* الخط بيفتح من النص لبرة بنعومة */
+}
+
+/*section*/
+/* ========================================== */
+/* 🔮 تأثير الدائرة الزجاجية النيون المستقبلية */
+/* ========================================== */
+
+/* ديف الحاوية الزجاجية الخارجية */
+.hero-avatar-container {
+    position: relative;
+    width: 280px;  /* مقاس مثالي متناسق */
+    height: 200px; /* واخدة سحبة بيضاوية سينمائية شيك */
+    margin: 40px auto 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* حواف دائرية مع لمسة زجاجية */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* الحواف المضيئة (النيون الملون) */
+    border: 2px solid rgba(125, 211, 252, 0.3); 
+    
+    /* توهج ثلاثي الأبعاد (داخلي وخارجي) ليعطي إحساس البلورة */
+    box-shadow: 
+        0 0 30px rgba(56, 189, 248, 0.2),       /* توهج أزرق خارجي */
+        0 0 50px rgba(236, 72, 153, 0.15),      /* تداخل وردي ناعم في الخلفية */
+        inset 0 0 20px rgba(255, 255, 255, 0.2), /* إضاءة بيضاء داخلية للحواف */
+        inset 0 0 40px rgba(56, 189, 248, 0.3);  /* عمق أزرق داخلي */
+        
+    transition: all 0.5s ease-in-out;
+}
+
+/* تنسيق الصورة الشخصية نفسها جوه الدائرة */
+.hero-avatar {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    object-fit: cover;
+    /* حماية إضافية للصورة لمنع بهتان الألوان */
+    background: #0f172a; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+}
+
+/* 🔥 حركة Hover صايعة لما تقف بالماوس على البلورة الزجاجية */
+.hero-avatar-container:hover {
+    transform: scale(1.03); /* تكبير خفيف جداً */
+    border-color: rgba(56, 189, 248, 0.6); /* الحواف تنور أكتر */
+    box-shadow: 
+        0 0 40px rgba(56, 189, 248, 0.4),
+        0 0 70px rgba(236, 72, 153, 0.3),
+        inset 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+.hero-avatar-container:hover .hero-avatar {
+    transform: rotate(3deg); /* لفة كيرف خفيفة تزيد الحيوية */
+}
+/* ========================================== */
+/* 🚀 تنسيق أزرار الهيرو الاحترافية المضيئة 🚀 */
+/* ========================================== */
+
+/* حاوية الأزرار لتظبيط المسافات */
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* مسافة مظبوطة بين الزرارين */
+}
+
+/* التنسيق الأساسي الموحد للزرارين */
+.hero-buttons button {
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 30px; /* حواف دائرية انسيابية جداً */
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 1️⃣ الزر الأول: Download CV (الزر المضيء الأساسي) */
+.btn-cv {
+    background: rgba(125, 211, 252, 0.1); /* خلفية زجاجية سماوي خفيفة */
+    color: #7dd3fc;
+    border: 1px solid rgba(125, 211, 252, 0.4);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
+
+/* تأثير الـ Hover على زرار الـ CV */
+.btn-cv:hover {
+    background: #7dd3fc; /* بيملى اللون بالكامل */
+    color: #0f172a;      /* يقلب الخط داكن عشان يظهر بوضوح */
+    box-shadow: 0 0 25px #7dd3fc; /* توهج نيون قوي */
+    transform: translateY(-3px);  /* يرتفع لفوق سنة */
+}
+
+/* 2️⃣ الزر الثاني: Contact Me (الزر الهادي الشفاف) */
+.btn-contact {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* تأثير الـ Hover على زرار الـ Contact */
+.btn-contact:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #7dd3fc;
+    border-color: #7dd3fc;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    transform: translateY(-3px);
+}
+
+/* تأثير الضغطة (Active) للزرارين لجعل الحركة واقعية */
+.hero-buttons button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+/*العناوين*/
+h1, h2, h3, h4 {
+    color: #7dd3fc;
+    margin-bottom: 10px;
+}
+
+/* ========================================== */
+/* قسم الـ About والكارت الزجاجي والأنميشن */
+/* ========================================== */
+
+.about {
+    text-transform: capitalize;
+    width: 85%;
+    max-width: 500px;
+    padding: 30px;
+    margin: 40px auto;
+    
+    /* تأثير الكارت الزجاجي */
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    
+    color: #ffffff;
+    text-align: center;
+    font-family: sans-serif;
+
+    /* أنميشن الـ Scroll اللي طلبته (الفوكس والتكبير) */
+    transform: scale(0.85);
+    opacity: 0.4;
+    animation: focusAndGrow linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+/* تأثير الآلة الكاتبة للعنوان اللي جوه الـ About */
+/* تنسيق السطر الأول - شغال فوراً وبنعومة */
+.type-line-1 {
+    font-family: monospace;
+    color: #7dd3fc;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    overflow: hidden;       
+    white-space: nowrap;    
+    margin: 0 auto 10px auto;
+    
+    width: 50ch; 
+    animation: typing1 4s steps(50, end) forwards; 
+}
+
+/* تنسيق السطر الثاني - مخفي تماماً في البداية ومستحيل يظهر قبل وقته */
+.type-line-2 {
+    font-family: monospace;
+    color: #7dd3fc;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    overflow: hidden;       
+    white-space: nowrap;    
+    margin: 0 auto;
+    
+    width: 0; /* 👈 دي أهم حتة! بيبدأ صفر ومستخبي تماماً من أول ثانية */
+    
+    /* هيستنى 4 ثواني كاملين والأول شغال، وبعدين يبدأ يفتح */
+    animation: typing2 4s steps(40, end) 4s forwards; 
+}
+
+/* ========================================== */
+/* الأنميشنز */
+/* ========================================== */
+
+@keyframes typing1 {
+    from { width: 0; }
+    to { width: 50ch; }
+}
+
+@keyframes typing2 {
+    from { width: 0; }
+    to { width: 40ch; } /* بيفتح تدريجياً لغاية العرض الكامل */
+}
+
+.about h3 {
+    font-weight: 600;
+    font-size: x-large;
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.about p {
+    color: #e0cdcdd2;
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    /* شيلنا الـ nowrap والـ width المضروب عشان النص يظهر كامل وينزل سطر طبيعي */
+}
+
+/* ========================================== */
+/* قسم الكروت والمشاريع جنب بعضها */
+/* ========================================== */
+
+/* ========================================== */
+/* ✨ اللمسة الزجاجية الفخمة لكروت المشاريع ✨ */
+/* ========================================== */
+
+/* ديف الأب المنزلق */
+.projects-slider {
+    width: 95%;
+    max-width: 1200px;
+    margin: 50px auto;
+    overflow-x: auto;          /* سحب أفقي */
+    white-space: nowrap;       /* الكروت في سطر واحد */
+    padding: 30px 10px;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+}
+
+/* إخفاء شريط السحب */
+.projects-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* التنسيق الزجاجي الموحد للكروت الثلاثة */
+.card, .card2, .card3 {
+    display: inline-block;     
+    width: 320px;              
+    vertical-align: top;     
+    box-sizing: border-box;  
+    margin: 0 20px;            /* مسافة نظيفة بين الكروت */
+    white-space: normal;       /* النصوص تنزل سطور طبيعي */
+    scroll-snap-align: center; 
+    
+    /* تأثير الزجاج (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* العناوين جوه الكروت */
+.card h4, .card2 h4, .card3 h4 {
+    color: #7dd3fc;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+/* الوصف جوه الكروت */
+.card p, .card2 p, .card3 p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الزرار اللي شايل الصورة */
+.card button, .card2 button, .card3 button {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6); /* خلفية داكنة خفيفة */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    color: #7dd3fc;
+    font-weight: bold;
+    font-family: monospace;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* تنسيق الصور جوه الأزرار */
+.card button img, .card2 button img, .card3 button img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* مقاس موحد ومظبوط من غير مط */
+    border-radius: 8px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* 🚀 لمسة الـ Hover الاحترافية (توهج وارتفاع) */
+.card:hover, .card2:hover, .card3:hover {
+    transform: translateY(-12px); /* الكارت يرتفع بسلاسة */
+    background: rgba(255, 255, 255, 0.09); /* الزجاج ينور أكتر */
+    border-color: rgba(125, 211, 252, 0.4); /* الحواف تنور أزرق نيون خفيف */
+    box-shadow: 0 15px 45px rgba(56, 189, 248, 0.2); /* توهج نيون تحت الكارت */
+}
+
+/* تأثير الـ Hover على الزرار جوه الكارت */
+.card:hover button, .card2:hover button, .card3:hover button {
+    background: #7dd3fc;
+    color: #0f172a; /* يقلب الألوان لشكل صايع */
+    box-shadow: 0 0 15px #7dd3fc;
+}
+/* ========================================== */
+/* قسم المهارات الزجاجي */
+/* ========================================== */
+
+.skills-glass-card {
+    width: 80%; 
+    max-width: 700px;
+    padding: 40px 20px;
+    margin: 40px auto; 
+    text-align: center;
+    background: rgba(255, 255, 255, 0.06); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+}
+
+.skills-glass-card h2 {
+    color: #7dd3fc; 
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+
+.skill-item {
+    display: inline-block; 
+    background: rgba(255, 255, 255, 0.1); 
+    color: #f8fafc;
+    padding: 12px 25px;
+    margin: 10px; 
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 30px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px); 
+    color: #38bdf8; 
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2); 
+}
+
+/* ========================================== */
+/* الأنميشنز (Keyframes) */
+/* ========================================== */
+
+@keyframes focusAndGrow {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 84ch; } /* مظبوطة على السطر الجديد الطويل */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #7dd3fc; }
+}
+
+
+
+/* ========================================== */
+/* 🌟 تنسيق الفوتر الاحترافي (Footer) 🌟 */
+/* ========================================== */
+
+footer {
+    margin-top: 60px;
+    padding: 30px 20px;
+    background: rgba(15, 23, 42, 0.8); /* خلفية داكنة متناسقة مع الهيدر */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* خط علوي خفيف جداً */
+    border-radius: 20px 20px 0 0; /* حواف دائرية من فوق بس */
+    font-family: 'Courier New', Courier, monospace;
+    color: #94a3b8; /* لون رمادي هادي للحقوق */
+    font-size: 14px;
+}
+
+/* تنسيق روابط السوشيال ميديا */
+footer a {
+    color: #7dd3fc; /* اللون الأزرق السماوي الأساسي للموقع */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+/* 🎨 لمسة الـ Hover الذكية لكل موقع بألوانه الحقيقية مع توهج نيون */
+
+/* فيسبوك يقلب أزرق */
+footer a[href*="facebook"]:hover {
+    color: #1877f2;
+    text-shadow: 0 0 10px rgba(24, 119, 242, 0.6);
+    transform: translateY(-3px);
+}
+
+/* انستجرام يقلب فوشيا/موف */
+footer a[href*="instagram"]:hover {
+    color: #e1306c;
+    text-shadow: 0 0 10px rgba(225, 48, 108, 0.6);
+    transform: translateY(-3px);
+}
+
+/* لينكد إن يقلب أزرق براند */
+footer a[href*="linkedin"]:hover {
+    color: #0077b5;
+    text-shadow: 0 0 10px rgba(0, 119, 181, 0.6);
+    transform: translateY(-3px);
+}
+
+/* السطر اللي فيه حقوق الملكية */
+footer p {
+    margin-top: 15px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+}
